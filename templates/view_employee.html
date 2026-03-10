@@ -1,0 +1,30 @@
+{% extends "home.html" %}
+{% block content %}
+<h2 class="text-center">Employee List</h2>
+<div class="container mt-4">
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>Emp ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Designation</th>
+            <th>Salary</th>
+            <th>Image</th>
+        </tr>
+        {% for emp in employees %}
+        <tr>
+            <td>{{ emp.emp_id }}</td>
+            <td>{{ emp.emp_name }}</td>
+            <td>{{ emp.email }}</td>
+            <td>{{ emp.phone_number }}</td>
+            <td>{{ emp.designation }}</td>
+            <td>{{ emp.salary }}</td>
+            <td>
+                <img src="{{ emp.image.url }}" width="80" height="80">
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
